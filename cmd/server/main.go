@@ -315,7 +315,7 @@ func main() {
 			"distributed":     *distributed,
 			"eviction_policy": *evictionPolicy,
 			"max_items":       *maxItems,
-			"default_ttl":     *defaultTTL.String(),
+			"default_ttl":     (*defaultTTL).String(),
 		}
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(info)

@@ -156,7 +156,7 @@ func (dc *DistributedCache) Get(ctx context.Context, key string) (interface{}, b
 
 	// If it's the local node, use local cache
 	if node.ID == dc.localNodeID {
-		return dc.localCache.Get(ctx, key, value, ttl)
+		return dc.localCache.Get(ctx, key)
 	}
 
 	// Otherwise, forward the request to the appropriate node
